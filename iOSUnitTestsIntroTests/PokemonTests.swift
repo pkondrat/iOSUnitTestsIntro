@@ -2,7 +2,7 @@
 //  PokemonTests.swift
 //  iOSUnitTestsIntro
 //
-//  Created by Theodore Bendixson on 7/17/16.
+//  Created by Piotr on 24/12/2016.
 //  Copyright © 2016 X-Team. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import XCTest
 @testable import iOSUnitTestsIntro
 
 class PokemonTests: XCTestCase {
-
+    
     var squirtle:Pokemon!
     var charmander:Pokemon!
     var psyduck:Pokemon!
@@ -21,6 +21,7 @@ class PokemonTests: XCTestCase {
         squirtle = Pokemon(type: .Water, attackType: .Water)
         charmander = Pokemon(type: .Fire, attackType: .Fire)
         psyduck = Pokemon(type: .Water, attackType: .Water)
+        
     }
     
     override func tearDown() {
@@ -30,27 +31,17 @@ class PokemonTests: XCTestCase {
         charmander = nil
         psyduck = nil
     }
-
-    func testThatAWaterPokemonDoesMoreDamageToAFirePokemon(){
-        
-        //1. Have Squirtle Attack Charmander
-        squirtle.attack(charmander)
-        
-        //Ouch!
-        
-        //2. Now Have Squirtle Attack Psyduck
-        squirtle.attack(psyduck)
-        
-        //Oooh. That had to hurt.
-        
-        //Who took more damage? Charmander or Psyduck?
-        
-        //If a Water Pokemon Does More Damage To A Fire Pokemon,
-        //We would expect Charmander to have less health than Psyduck.
-        
-        //3. Test it
-        XCTAssertTrue(charmander.health < psyduck.health)
-        
+    
+    func testExample() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testPerformanceExample() {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
     }
     
 }

@@ -2,49 +2,43 @@
 //  Pokemon.swift
 //  iOSUnitTestsIntro
 //
-//  Created by Theodore Bendixson on 7/17/16.
+//  Created by Piotr on 24/12/2016.
 //  Copyright © 2016 X-Team. All rights reserved.
 //
 
 import Foundation
-
-class Pokemon{
-    
+class Pokemon {
     var type:PokemonType
     var attackType:PokemonAttackType
     var health:Int = 100
     
-    init(type:PokemonType, attackType:PokemonAttackType){
+    init(type:PokemonType, attackType:PokemonAttackType) {
         self.type = type
         self.attackType = attackType
     }
     
-    func attack(enemy:Pokemon){
+    let squirtle = Pokemon(type: .Water, attackType: .Water)
     
+    func attack(enemy:Pokemon) {
         var damage = 30
         
         if enemy.type == .Fire && attackType == .Water{
             damage = 60
         }
-        
         if enemy.type == .Water && attackType == .Fire{
             damage = 10
         }
         
-        enemy.health = enemy.health - damage
-    
+        enemy.health -= damage
     }
-    
-    
 }
-
-enum PokemonType{
+enum PokemonType {
     case Neutral
     case Fire
     case Water
 }
 
-enum PokemonAttackType{
+enum PokemonAttackType {
     case Normal
     case Fire
     case Water

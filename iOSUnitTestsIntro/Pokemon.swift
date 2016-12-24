@@ -17,11 +17,8 @@ class Pokemon {
         self.attackType = attackType
     }
     
-    let squirtle = Pokemon(type: .Water, attackType: .Water)
-    
     func attack(enemy:Pokemon) {
         var damage = 30
-        
         if enemy.type == .Fire && attackType == .Water{
             damage = 60
         }
